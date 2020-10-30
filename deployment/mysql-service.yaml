@@ -1,15 +1,18 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pages-mysql
-  namespace: dalston
   labels:
     app: pages
     tier: database
+  name: pages-mysql
+  namespace: dalston
 spec:
   ports:
-    - port: 3306
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
   selector:
     app: pages
     tier: database
-  type: NodePort
+status:
+  loadBalancer: {}

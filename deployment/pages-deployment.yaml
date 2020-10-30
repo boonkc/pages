@@ -24,7 +24,7 @@ spec:
           hostPath:
               path: /dalston
       containers:
-        - image: boonkc/pages:pv
+        - image: boonkc/pages:distributed
           name: pages
           ports:
             - containerPort: 8080
